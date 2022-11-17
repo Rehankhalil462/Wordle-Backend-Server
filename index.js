@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 import wordRoutes from "./routes/wordsRoutes.js";
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: ".env" });
 
 app.use(bodyParser.json({ limit: { word: "30mb" }, extended: true }));
 app.use(bodyParser.urlencoded({ limit: { word: "30mb" }, extended: true }));
