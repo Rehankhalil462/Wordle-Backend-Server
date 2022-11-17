@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import wordRoutes from "./routes/wordsRoutes.js";
-import Word from "./models/word.js";
 
 const app = express();
 dotenv.config();
@@ -25,7 +24,7 @@ mongoose
   .connect(process.env.DB_CONNECTION_URL)
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`Server is running at PORT ${PORT}`);
+      console.log(`Server is running  at PORT ${PORT}`);
     });
   })
   .catch((err) => {
