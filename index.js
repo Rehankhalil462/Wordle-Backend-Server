@@ -1,10 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import * as dotenv from "dotenv";
-import wordRoutes from "./routes/wordsRoutes.js";
 
-dotenv.config({ path: ".env" });
+import wordRoutes from "./routes/wordsRoutes.js";
 
 const app = express();
 
@@ -19,7 +17,9 @@ const PORT = process.env.PORT || 5000;
 
 //connect to db
 mongoose
-  .connect(process.env.DB_CONNECTION_URL)
+  .connect(
+    "mongodb+srv://wordle:wordle46294359@cluster0.7690a.mongodb.net/?retryWrites=true&w=majority"
+  )
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server is running  at PORT ${PORT}`);
