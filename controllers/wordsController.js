@@ -24,3 +24,19 @@ export const createWord = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
+
+export const getWord = async (req, res) => {
+  try {
+    Word.countDocuments().exec((err, count) => {
+      var random = Math.floor(Math.random() * count);
+
+      Word.findOne()
+        .skip(random)
+        .exec((err, result) => {
+          res.status(200).json(result);
+        });
+    });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
