@@ -10,7 +10,7 @@ app.use(cors());
 app.use("/words", wordRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello to the Wordle React Native Server !");
+  res.send("Hello to the Wordle Backend Server !");
 });
 
 const PORT = process.env.PORT || 5000;
