@@ -7,6 +7,7 @@ import wordRoutes from "./routes/wordsRoutes.js";
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 app.use("/words", wordRoutes);
 
 app.get("/", (req, res) => {
